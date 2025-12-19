@@ -21,6 +21,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.DisabledInNativeImage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest;
+import org.springframework.context.ApplicationContext;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
@@ -67,6 +68,14 @@ class OwnerControllerTests {
 
 	@MockitoBean
 	private OwnerRepository owners;
+
+	@Autowired
+	ApplicationContext applicationContext;
+
+	@Test
+	public void getBean() {
+		OwnerController bean = applicationContext.getBean(OwnerController.class);
+	}
 
 	private Owner george() {
 		Owner george = new Owner();
