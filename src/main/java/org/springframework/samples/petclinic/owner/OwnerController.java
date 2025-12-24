@@ -19,6 +19,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -49,6 +50,13 @@ class OwnerController {
 	private final OwnerRepository owners;
 
 	private final ApplicationContext applicationContext;
+
+	@Autowired
+	private PetTypeRepository petTypeRepository;
+	/*의존성 주입을 위한 3가지 방법
+	* 1. Field Injection : @Autowired 를 필드에 직접 기재
+	* 2. Constructor(생성자) : 생성자로 객체를 주입받는 법
+	* 3. setter 활용 : 주의할 점으로는 setter 로 받는 변수는 final 선언 X*/
 
 	public OwnerController(OwnerRepository owners, ApplicationContext applicationContext) {
 		this.owners = owners;

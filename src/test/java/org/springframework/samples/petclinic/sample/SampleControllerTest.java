@@ -12,7 +12,8 @@ public class SampleControllerTest {
 	ApplicationContext applicationContext;
 
 	@Test
-	public void testDI(){
+	public void testDI() {
 		SampleController bean = applicationContext.getBean(SampleController.class);
 	}
+
 }
