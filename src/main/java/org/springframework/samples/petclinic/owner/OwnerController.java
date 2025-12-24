@@ -26,6 +26,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StopWatch;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
@@ -84,6 +85,14 @@ class OwnerController {
 
 	@GetMapping("/owners/new")
 	public String initCreationForm() {
+		/*
+		기존 aop 를 적용하기 전 모든 메소드에 삽입될 stopWatch 활용 구문
+		StopWatch stopWatch = new StopWatch();
+		stopWatch.start();
+
+		stopWatch.stop();
+		System.out.println(stopWatch.prettyPrint());
+		 */
 		return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
 	}
 
