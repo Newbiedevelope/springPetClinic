@@ -67,6 +67,9 @@ class OwnerControllerTests {
 	private MockMvc mockMvc;
 
 	@MockitoBean
+	private PetTypeRepository petTypeRepository;
+
+	@MockitoBean
 	private OwnerRepository owners;
 
 	@Autowired

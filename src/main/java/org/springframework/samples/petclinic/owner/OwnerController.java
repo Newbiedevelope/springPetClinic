@@ -54,10 +54,11 @@ class OwnerController {
 
 	@Autowired
 	private PetTypeRepository petTypeRepository;
-	/*의존성 주입을 위한 3가지 방법
-	* 1. Field Injection : @Autowired 를 필드에 직접 기재
-	* 2. Constructor(생성자) : 생성자로 객체를 주입받는 법
-	* 3. setter 활용 : 주의할 점으로는 setter 로 받는 변수는 final 선언 X*/
+
+	/*
+	 * 의존성 주입을 위한 3가지 방법 1. Field Injection : @Autowired 를 필드에 직접 기재 2. Constructor(생성자) :
+	 * 생성자로 객체를 주입받는 법 3. setter 활용 : 주의할 점으로는 setter 로 받는 변수는 final 선언 X
+	 */
 
 	public OwnerController(OwnerRepository owners, ApplicationContext applicationContext) {
 		this.owners = owners;
@@ -86,12 +87,10 @@ class OwnerController {
 	@GetMapping("/owners/new")
 	public String initCreationForm() {
 		/*
-		기존 aop 를 적용하기 전 모든 메소드에 삽입될 stopWatch 활용 구문
-		StopWatch stopWatch = new StopWatch();
-		stopWatch.start();
-
-		stopWatch.stop();
-		System.out.println(stopWatch.prettyPrint());
+		 * 기존 aop 를 적용하기 전 모든 메소드에 삽입될 stopWatch 활용 구문 StopWatch stopWatch = new
+		 * StopWatch(); stopWatch.start();
+		 *
+		 * stopWatch.stop(); System.out.println(stopWatch.prettyPrint());
 		 */
 		return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
 	}
