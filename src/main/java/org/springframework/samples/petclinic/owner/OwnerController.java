@@ -85,6 +85,7 @@ class OwnerController {
 	}
 
 	@GetMapping("/owners/new")
+	@LogExecutionTime
 	public String initCreationForm() {
 		/*
 		 * 기존 aop 를 적용하기 전 모든 메소드에 삽입될 stopWatch 활용 구문 StopWatch stopWatch = new
