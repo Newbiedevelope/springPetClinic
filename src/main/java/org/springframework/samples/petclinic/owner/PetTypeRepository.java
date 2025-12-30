@@ -20,6 +20,7 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Repository class for <code>PetType</code> domain objects.
@@ -34,6 +35,7 @@ public interface PetTypeRepository extends JpaRepository<PetType, Integer> {
 	 * @return a Collection of {@link PetType}s.
 	 */
 	@Query("SELECT ptype FROM PetType ptype ORDER BY ptype.name")
+	@Transactional(readOnly = true)
 	List<PetType> findPetTypes();
 
 }
